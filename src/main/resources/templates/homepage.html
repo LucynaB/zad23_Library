@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <title>Book List</title>
+</head>
+<body>
+
+<a href="/addBook">Dodaj książkę</a>
+
+
+<table class="table table-striped">
+    <thead>
+    <th>Tytuł <a href="/sort?order=title">sortuj</a></th>
+    <th>Kategoria</th>
+    <th>ISBN <a href="/sort?order=isbn">sortuj</a></th>
+    <th>Data publikacji <a href="/sort?order=publicationDate">sortuj</a></th>
+    <th></th>
+    <th></th>
+    </thead>
+    <tr th:each="book:${books}">
+        <td><a th:href="'/book/' + ${book.id}" th:text="${book.title}">tresc linku</a></td>
+        <td th:text="${book.category}"></td>
+        <td th:text="${book.isbn}"></td>
+        <td th:text="${#temporals.format(book.publicationDate, 'dd-MMM-yyyy')}"></td>
+
+        <td><a th:href="'/editBook?id=' + ${book.id}">Edytuj</a></td>
+        <td><a th:href="'/removeBook?id=' + ${book.id}">Usuń</a></td>
+
+
+
+    </tr>
+
+
+</table>
+
+</body>
+</html>

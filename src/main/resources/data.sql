@@ -1,0 +1,4 @@
+INSERT INTO book (title,author,publication_date,category,description,isbn) values ('W pustyni i w puszczy','Henryk Sienkiewicz','1911-11-18','PRZYGODOWA','powieść przygodowa dla młodzieży','83-01-05369-0');
+INSERT INTO book (title,author,publication_date,category,description,isbn) values ('Sherlock Holmes','Arthur Conan Doyle','1893-04-25','KRYMINAŁ','wciągająca powieść detektywistyczna','83-06-02757-4');
+INSERT INTO book (title,author,publication_date,category,description,isbn) values ('Duma i uprzedzenie','Jane Austen','1813-07-04','ROMANS','życie angielskich sfer wyższych','83-11-54321-2');
+INSERT INTO book (title,author,publication_date,category,description,isbn) values ('Władca Pierścieni','J.R.R. Tolkien','1954-02-22','FANTASY','przygody Hobitta w świecie ródziemia','85-02-01234-5');

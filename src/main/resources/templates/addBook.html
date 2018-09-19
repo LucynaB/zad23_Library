@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj książkę</title>
+</head>
+<body>
+
+<form action="/addBook" method="post" th:object="${newBook}">
+    <h2>Tytuł książki:
+        <input type="text" th:field="*{title}" placeholder="Tytuł" /> </h2>
+    <h2>Autor:
+        <input type="text" th:field="*{author}" placeholder="Autor" /> </h2>
+    <h2>Kategoria:
+        <select th:field="*{category}">
+            <option
+                    th:each="category: ${T(com.example.lb.Category).values()}"
+                    th:text="${category}"
+                    th:value="${category}"></option>
+        </select> </h2>
+    <h2>Data publikacji:
+        <input type="date" th:field="*{publicationDate}" placeholder="Data premiery" /> </h2>
+    <h2>Opis:
+        <textarea type="textarea" th:field="*{description}" min="1" rows="3" placeholder="Opis" /> </h2>
+    <h2>ISBN:
+        <input type="text" th:field="*{isbn}" max="13" placeholder="Isbn" /> </h2>
+    <input type="submit" value="Dodaj" /> <br>
+</form>
+
+</body>
+</html>
